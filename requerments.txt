@@ -1,0 +1,8 @@
+selenium 3.141.0 
+pytest 6.2.4
+pytest-html 3.1.1
+pytest-xdist 2.3.0
+chromedriver-binary 91.0.4472.101
+requests 2.25.1
+beautifulsoup4 4.9.3
+pandas 1.2.4
