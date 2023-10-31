@@ -1,0 +1,35 @@
+from .base_page import BasePage
+from selenium.webdriver.common.by import By
+
+class ICNPage(BasePage):
+    URL = "https://support.kaspersky.com/help/"
+
+    LOCATORS = {
+        "ICN_LINK": (By.LINK_TEXT, "Industrial CyberSecurity for Networks"),
+        "VERSION_4_LINK": (By.LINK_TEXT, "4.0"),
+        "ABOUT_LINK": (By.LINK_TEXT, "About Kaspersky Industrial CyberSecurity for Networks"),
+        "HARDWARE_LINK": (By.LINK_TEXT, "Hardware and software requirements"),
+        "RAM_TEXT_EN": (By.XPATH, "//p[contains(text(), 'RAM: 8 GB, and an additional 2 GB for each monitoring point on this computer')]"),
+        "RAM_TEXT_RU": (By.XPATH, "//p[contains(text(), 'объем оперативной памяти: 8 ГБ и по 2 ГБ для каждой точки мониторинга на этом компьютере;')]")
+    }
+
+    def open(self):
+        self.driver.get(self.URL)
+
+    def open_icn(self):
+        self.find_element(self.LOCATORS["ICN_LINK"]).click()
+
+    def open_version_4(self):
+        self.find_element(self.LOCATORS["VERSION_4_LINK"]).click()
+
+    def open_about(self):
+        self.find_element(self.LOCATORS["ABOUT_LINK"]).click()
+
+    def open_hardware(self):
+        self.find_element(self.LOCATORS["HARDWARE_LINK"]).click()
+
+    def get_ram_text_en(self):
+        return self.get_text(self.LOCATORS["RAM_TEXT_EN"])
+
+    def get_ram_text_ru(self):
+        return self.get_text(self.LOCATORS["RAM_TEXT_RU"])
