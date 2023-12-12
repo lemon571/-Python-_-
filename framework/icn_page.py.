@@ -7,6 +7,8 @@ class ICNPage(BasePage):
     LOCATORS = {
         "ICN_LINK": (By.LINK_TEXT, "Industrial CyberSecurity for Networks"),
         "VERSION_4_LINK": (By.LINK_TEXT, "4.0"),
+        "VERSION_3_LINK": (By.LINK_TEXT, "3.0"),
+        "VERSION_2.1_LINK": (By.LINK_TEXT, "3.1"),
         "ABOUT_LINK": (By.LINK_TEXT, "About Kaspersky Industrial CyberSecurity for Networks"),
         "HARDWARE_LINK": (By.LINK_TEXT, "Hardware and software requirements"),
         "RAM_TEXT_EN": (By.XPATH, "//p[contains(text(), 'RAM: 8 GB, and an additional 2 GB for each monitoring point on this computer')]"),
@@ -24,6 +26,9 @@ class ICNPage(BasePage):
     
     def open_version_3(self):
         self.find_element(self.LOCATORS["VERSION_3_LINK"]).click()
+
+    def open_version_3.1(self):
+        self.find_element(self.LOCATORS["VERSION_3.1_LINK"]).click()
 
     def open_about(self):
         self.find_element(self.LOCATORS["ABOUT_LINK"]).click()
