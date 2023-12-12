@@ -21,6 +21,9 @@ class ICNPage(BasePage):
 
     def open_version_4(self):
         self.find_element(self.LOCATORS["VERSION_4_LINK"]).click()
+    
+    def open_version_3(self):
+        self.find_element(self.LOCATORS["VERSION_3_LINK"]).click()
 
     def open_about(self):
         self.find_element(self.LOCATORS["ABOUT_LINK"]).click()
